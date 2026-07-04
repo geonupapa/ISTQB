@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ISTQB AL-TA 문제풀이</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="topbar">
+    <div class="title-wrap">
+      <button id="moduleTrigger" class="title-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+        <h1>
+          <span class="title-full">ISTQB Advanced Level — Test Analyst 문제풀이</span>
+          <span class="title-short">ISTQB AL-TA 문제풀이</span>
+        </h1>
+        <span class="title-caret">▾</span>
+      </button>
+      <div id="moduleMenu" class="module-menu">
+        <button class="module-option" type="button" data-module="TA">
+          <span class="module-option-code">TA</span>
+          <span class="module-option-name">Test Analyst</span>
+        </button>
+        <button class="module-option" type="button" data-module="TM">
+          <span class="module-option-code">TM</span>
+          <span class="module-option-name">Test Manager</span>
+        </button>
+        <button class="module-option" type="button" data-module="TTA">
+          <span class="module-option-code">TTA</span>
+          <span class="module-option-name">Technical Test Analyst</span>
+        </button>
+      </div>
+    </div>
+    <div class="topbar-controls">
+      <select id="filterSelect">
+        <option value="all">전체</option>
+        <option value="main">본문제</option>
+        <option value="appendix">부록</option>
+        <option value="wrong">틀린 문제만</option>
+        <option value="unanswered">안 푼 문제만</option>
+      </select>
+      <label class="shuffle-label"><input type="checkbox" id="shuffleToggle"> 무작위</label>
+      <button id="resetBtn" class="btn-secondary">초기화</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav id="qnav" class="qnav">
+      <div class="qnav-toggle-row">
+        <span id="qnavSummary" class="qnav-summary"></span>
+        <button id="qnavToggle" class="qnav-toggle" type="button">문제 목록 펼치기 ▾</button>
+      </div>
+      <div id="qnavGrid" class="qnav-grid"></div>
+    </nav>
+
+    <main class="content">
+      <div id="progressBar" class="progress-wrap">
+        <div class="progress-info">
+          <span id="progressText">0 / 0</span>
+          <span id="scoreText">점수: 0 / 0</span>
+        </div>
+        <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+      </div>
+
+      <section id="questionCard" class="card"></section>
+
+      <div class="nav-buttons">
+        <button id="prevBtn" class="btn-secondary">← 이전</button>
+        <button id="submitBtn" class="btn-primary">정답확인</button>
+        <button id="nextBtn" class="btn-secondary">다음 →</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" id="footerNote">ISTQB_AL_TA_v4.0_샘플문제_v4.1_한글_v1.1.pdf 기반 로컬 학습용 퀴즈</footer>
+</div>
+
+<script src="data/ta-questions.js"></script>
+<script src="data/tm-questions.js"></script>
+<script src="data/tta-questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
